@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import icon from "../../static/imgs/default.png";
-import { InputItem, Toast } from "antd-mobile";
+import { InputItem, Toast, Button } from "antd-mobile";
 
 import "./login.css";
 
@@ -77,6 +77,17 @@ class Login extends Component {
             onChange={this.onChangePw}
             value={this.state.passWord}
           />
+        </div>
+        <div className="buttons">
+          <Button className="loginBtn" type="primary">
+            登录
+          </Button>
+          <Button className="registerBtn">注册</Button>
+        </div>
+        <div className="otherWay">
+          <div className="line" />
+          <div className="content">其他方式登录</div>
+          <div className="line" />
         </div>
       </div>
     );

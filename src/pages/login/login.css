@@ -18,3 +18,23 @@
   margin-top: 20px;
   padding: 10px;
 }
+.login .buttons {
+  padding: 10px;
+}
+.login .buttons a {
+  margin-top: 10px;
+}
+.login .buttons .registerBtn {
+  background-color: #32db64;
+  color: white;
+}
+.login .otherWay {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+.login .otherWay .line {
+  width: 30%;
+  border-bottom: 1px dashed gray;
+  height: 8px;
+}
