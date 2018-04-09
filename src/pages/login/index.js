@@ -89,6 +89,21 @@ class Login extends Component {
           <div className="content">其他方式登录</div>
           <div className="line" />
         </div>
+        <div className="loginType">
+          <i className="icon iconfont icon-QQ" />
+          <i className="icon iconfont icon-weixin" />
+          <i className="icon iconfont icon-zhifubao" />
+        </div>
+        <div className="links">
+          <span className="registerBtn">立即注册</span>
+          <span className="forgetPasswordBtn">忘记密码</span>
+        </div>
+        <div className="bottom">
+          <span>简体</span>
+          <span>繁体</span>
+          <span>English</span>
+          <span>常见问题</span>
+        </div>
       </div>
     );
   }
