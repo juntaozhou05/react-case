@@ -1,0 +1,17 @@
+.top {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 0.2rem;
+}
+.top img {
+  width: 0.6rem;
+  height: 0.6rem;
+}
+.top input {
+  width: 70%;
+  border-radius: 0.1rem;
+  padding: 0.1rem;
+}
+.top i {
+  font-size: 0.6rem;
+}

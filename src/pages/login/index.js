@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import icon from "../../static/imgs/default.png";
 import { InputItem, Toast, Button } from "antd-mobile";
 
@@ -53,6 +54,9 @@ class Login extends Component {
       passWord
     });
   };
+  LinkLogin() {
+    this.props.history.push("/main");
+  }
   render() {
     return (
       <div className="login">
@@ -79,7 +83,11 @@ class Login extends Component {
           />
         </div>
         <div className="buttons">
-          <Button className="loginBtn" type="primary">
+          <Button
+            className="loginBtn"
+            type="primary"
+            onClick={this.LinkLogin.bind(this)}
+          >
             登录
           </Button>
           <Button className="registerBtn">注册</Button>
@@ -109,4 +117,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default withRouter(Login);
