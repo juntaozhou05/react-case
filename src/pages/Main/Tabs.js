@@ -1,5 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import { Tabs, WhiteSpace } from "antd-mobile";
+import AutoPlay from "../AutoPlay";
+
+import "./tabs.css";
 
 class Demo extends React.Component {
   renderContent = tab => (
@@ -8,11 +11,11 @@ class Demo extends React.Component {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        height: "150px",
+        height: "100%",
         backgroundColor: "#fff"
       }}
     >
-      <p>Content of {tab.title}</p>
+      <AutoPlay />
     </div>
   );
 
@@ -30,11 +33,12 @@ class Demo extends React.Component {
     ];
 
     return (
-      <div>
+      <div style={{ height: "100%" }}>
         <WhiteSpace />
         <Tabs
+          swipeable={false}
           tabs={tabs}
-          renderTabBar={props => <Tabs.DefaultTabBar {...props} page={3} />}
+          renderTabBar={props => <Tabs.DefaultTabBar {...props} page={4} />}
         >
           {this.renderContent}
         </Tabs>

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import Top from "./top";
 import Tabs from "./Tabs";
+import "./main.css";
 
 class Main extends Component {
   constructor(props) {

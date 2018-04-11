@@ -13,7 +13,7 @@ class Top extends Component {
       <div className="top">
         <img src={icon} alt="" />
         <input type="text" placeholder="搜索" />
-        <i class="icon iconfont icon-other" />
+        <i className="icon iconfont icon-other" />
       </div>
     );
   }
