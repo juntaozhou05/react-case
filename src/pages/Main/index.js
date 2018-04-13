@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import Top from "./top";
 import Tabs from "./Tabs";
+import Bottom from "../Bottom";
 import "./main.css";
 
 class Main extends Component {
@@ -14,6 +15,7 @@ class Main extends Component {
       <div className="main">
         <Top />
         <Tabs />
+        <Bottom />
       </div>
     );
   }

@@ -11,7 +11,7 @@ class Demo extends React.Component {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        height: "100%",
+        height: "42%",
         backgroundColor: "#fff"
       }}
     >

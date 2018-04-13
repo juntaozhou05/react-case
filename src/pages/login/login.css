@@ -5,8 +5,9 @@
 }
 .login .top {
   padding-top: 1rem;
+  display: block;
 }
-.login .top .icon {
+.login .top .topIcon {
   width: 1rem;
   height: 1rem;
 }

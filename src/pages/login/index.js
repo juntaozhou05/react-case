@@ -61,7 +61,7 @@ class Login extends Component {
     return (
       <div className="login">
         <div className="top">
-          <img className="icon" src={icon} alt="" />
+          <img className="topIcon" src={icon} alt="" />
           <div className="title">登录账号</div>
         </div>
         <div className="inputs">

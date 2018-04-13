@@ -1,0 +1,14 @@
+.bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  border-top: 1px solid #cec8c8;
+  padding: 0.1rem;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.bottom .item {
+  cursor: pointer;
+}
