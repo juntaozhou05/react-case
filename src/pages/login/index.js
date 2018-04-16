@@ -55,7 +55,7 @@ class Login extends Component {
     });
   };
   LinkLogin() {
-    this.props.history.push("/main");
+    this.props.history.push("/main/");
   }
   render() {
     return (

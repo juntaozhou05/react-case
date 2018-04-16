@@ -33,7 +33,7 @@ class Demo extends React.Component {
     ];
 
     return (
-      <div style={{ height: "100%" }}>
+      <div style={{ height: "50%" }}>
         <WhiteSpace />
         <Tabs
           swipeable={false}
@@ -42,6 +42,20 @@ class Demo extends React.Component {
         >
           {this.renderContent}
         </Tabs>
+        <div className="lists">
+          <div className="item">
+            <p className="title">标题</p>
+            <p className="content">这里是内容</p>
+          </div>
+          <div className="item">
+            <p className="title">标题</p>
+            <p className="content">这里是内容</p>
+          </div>
+          <div className="item">
+            <p className="title">标题</p>
+            <p className="content">这里是内容</p>
+          </div>
+        </div>
         <WhiteSpace />
       </div>
     );

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 import "./bottom.css";
 
@@ -10,14 +11,14 @@ class Bottom extends Component {
   render() {
     return (
       <div className="bottom">
-        <div className="item">
+        <Link to={`/main/`} className="item">
           <i class="icon iconfont icon-songhuohuoche" />
           <p>首页</p>
-        </div>
-        <div className="item">
+        </Link>
+        <Link to={`/main/classes`} className="item">
           <i class="icon iconfont icon-jiangbei" />
           <p>分类</p>
-        </div>
+        </Link>
         <div className="item">
           <i class="icon iconfont icon-gouwuche" />
           <p>菜单</p>
