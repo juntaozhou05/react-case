@@ -12,23 +12,23 @@ class Bottom extends Component {
     return (
       <div className="bottom">
         <Link to={`/main/`} className="item">
-          <i class="icon iconfont icon-songhuohuoche" />
+          <i className="icon iconfont icon-songhuohuoche" />
           <p>首页</p>
         </Link>
         <Link to={`/main/classes`} className="item">
-          <i class="icon iconfont icon-jiangbei" />
+          <i className="icon iconfont icon-jiangbei" />
           <p>分类</p>
         </Link>
         <div className="item">
-          <i class="icon iconfont icon-gouwuche" />
+          <i className="icon iconfont icon-gouwuche" />
           <p>菜单</p>
         </div>
         <div className="item">
-          <i class="icon iconfont icon-qianbi" />
+          <i className="icon iconfont icon-qianbi" />
           <p>金钱</p>
         </div>
         <div className="item">
-          <i class="icon iconfont icon-yonghuzhongxin" />
+          <i className="icon iconfont icon-yonghuzhongxin" />
           <p>我的</p>
         </div>
       </div>

@@ -3,6 +3,7 @@ import { Route } from "react-router-dom";
 
 import Top from "./top";
 import Tabs from "../Tabs";
+import Left from "../Left";
 import Classes from "../Classes";
 import Bottom from "../Bottom";
 import "./main.css";
@@ -16,6 +17,7 @@ class Main extends Component {
     return (
       <div className="main">
         <Top />
+        <Left />
         <Route exact path={`/main/`} component={Tabs} />
         <Route path={`/main/classes`} component={Classes} />
         <Bottom />
