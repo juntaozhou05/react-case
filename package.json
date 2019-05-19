@@ -4,7 +4,9 @@
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx webpack",
+    "dist": "npx webpack --config webpack.product.config.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +20,12 @@
   },
   "homepage": "https://github.com/juntaozhou05/react-case#readme",
   "devDependencies": {
+    "autoprefixer": "^9.5.1",
     "css-loader": "^2.1.1",
+    "mini-css-extract-plugin": "^0.6.0",
+    "node-sass": "^4.12.0",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.31.0",
     "webpack-cli": "^3.3.2"
