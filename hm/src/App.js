@@ -1,12 +1,12 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Test from "./pages/Test"
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import TodoList from "./pages/TodoList";
 
 function App() {
   return (
     <div className="App">
-      <Test />
+      <TodoList />
     </div>
   );
 }
