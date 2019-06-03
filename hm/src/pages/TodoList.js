@@ -15,6 +15,7 @@ export default class test extends Component {
       }));
     };
     this.handleButtonClick = () => {
+      console.log(this.input);
       this.setState(prevState => ({
         list: [...prevState.list, prevState.inputValue],
         inputValue: ""
@@ -28,6 +29,25 @@ export default class test extends Component {
       });
     };
   }
+  //组件即将挂载到页面上
+  componentWillMount() {
+    console.log("componentWillMount");
+  }
+  //组件被挂载后执行
+  componentDidMount() {
+    console.log("componentWillMount");
+  }
+  //更新组件
+  componentWillReceiveProps() {
+    console.log("componentWillReceiveProps");
+  }
+  shouldComponentUpdate() {
+    console.log("shouldComponentUpdate");
+    return true;
+  }
+  componentWillUpdate() {
+    console.log("componentWillUpdate");
+  }
   render() {
     return (
       <div className="test">
@@ -36,6 +56,9 @@ export default class test extends Component {
           <input
             id="insertArea"
             type="text"
+            ref={input => {
+              this.input = input;
+            }}
             value={this.state.inputValue}
             onChange={this.handleInputChange}
           />

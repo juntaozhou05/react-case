@@ -10,6 +10,12 @@ export default class TodoItem extends Component {
       handleDeleteItem(index);
     };
   }
+  //一个组件要从父组件接收参数
+  //如果这个组件第一次存在于父组件中，不会执行
+  //如果这个组件之前已经存在于父组件中，才会执行
+  componentWillReceiveProps() {
+    console.log("componentWillReceiveProps");
+  }
   render() {
     const { content } = this.props;
     return (
