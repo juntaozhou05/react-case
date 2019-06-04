@@ -16,6 +16,14 @@ export default class TodoItem extends Component {
   componentWillReceiveProps() {
     console.log("componentWillReceiveProps");
   }
+  //性能优化
+  shouldComponentUpdate(nextProps, nextState) {
+    if (nextProps.content !== this.props.content) {
+      return true;
+    } else {
+      return false;
+    }
+  }
   render() {
     const { content } = this.props;
     return (
