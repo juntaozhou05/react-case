@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import axios from "axios";
+import "../mock/mock";
 
 export default class TodoItem extends Component {
   constructor(props) {
@@ -23,6 +25,12 @@ export default class TodoItem extends Component {
     } else {
       return false;
     }
+  }
+  //请求数据
+  componentDidMount() {
+    axios.get("/data", { dataType: "json" }).then(res => {
+      console.log("res", res);
+    });
   }
   render() {
     const { content } = this.props;
