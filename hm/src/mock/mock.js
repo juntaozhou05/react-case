@@ -2,8 +2,6 @@ import Mock from "mockjs";
 
 Mock.mock("/data", {
   code: 0,
-  data: {
-    title: "title"
-  },
+  data: [1, 2, 3],
   message: "操作成功"
 });
