@@ -1,0 +1,13 @@
+.headerWrapper {
+  background-color: green;
+  position: absolute;
+  height: 80px;
+  width: 100%;
+}
+.img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 50px;
+}
