@@ -1,3 +1,20 @@
 input::placeholder {
   color: green;
 }
+.enter {
+  width: 160px;
+  transition: all 0.4s ease-in;
+}
+.enter-active {
+  width: 240px;
+}
+.enter-done {
+  width: 240px;
+}
+.exit {
+  width: 240px;
+  transition: all 0.4s ease-in;
+}
+.exit-active {
+  width: 160px;
+}

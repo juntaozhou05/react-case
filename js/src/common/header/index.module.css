@@ -71,3 +71,14 @@
   color: #fff;
   background-color: #ec6159;
 }
+.iconai219 {
+  margin-left: -28px;
+}
+.focused {
+  width: 200px;
+}
+.iconfocused {
+  padding: 5px;
+  background-color: gray;
+  border-radius: 15px;
+}
