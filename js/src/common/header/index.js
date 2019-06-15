@@ -12,6 +12,32 @@ class Header extends Component {
     this.handleMainLink = this.handleMainLink.bind(this);
   }
   render() {
+    const {
+      focused,
+      list,
+      handleFocuse,
+      mouseIn,
+      handlBlur,
+      page,
+      totalPage,
+      handleMouseEnter,
+      handleMouseLeave,
+      handleChangePage
+    } = this.props;
+    const pageList = [];
+    const newList = list.toJS();
+    if (newList.length > 0) {
+      for (let i = (page - 1) * 10; i < page * 10; i++) {
+        if (newList[i]) {
+          pageList.push(
+            <a key={i} href="" className={header.searchInfoItem}>
+              {newList[i]}
+            </a>
+          );
+        }
+      }
+    }
+
     return (
       <div className={header.headerWrapper}>
         <img
@@ -31,34 +57,62 @@ class Header extends Component {
           <div className={[header.navItem, header.floatLeft].join(" ")}>
             下载App
           </div>
-          <CSSTransition
-            in={this.props.focused}
-            timeout={2000}
-            className={[
-              header.navSearch,
-              this.props.focused ? "slide" : ""
-            ].join(" ")}
-          >
-            <input
-              type="text"
-              placeholder="搜索"
-              onFocus={this.props.handleFocuse}
-              onBlur={this.props.handlBlur}
+          <div>
+            <CSSTransition
+              in={focused}
+              timeout={2000}
+              className={[
+                header.navSearch,
+                focused || mouseIn ? "slide" : ""
+              ].join(" ")}
+            >
+              <input
+                type="text"
+                placeholder="搜索"
+                onFocus={() => {
+                  handleFocuse(list);
+                }}
+                onBlur={handlBlur}
+              />
+            </CSSTransition>
+            <span
+              className={[
+                "iconfont",
+                "iconai219",
+                header.iconai219,
+                focused || mouseIn ? header.iconfocused : ""
+              ].join(" ")}
             />
-          </CSSTransition>
-          <span
-            className={[
-              "iconfont",
-              "iconai219",
-              header.iconai219,
-              this.props.focused ? header.iconfocused : ""
-            ].join(" ")}
-          />
-          <div className={[header.navItem, header.floatRight].join(" ")}>
-            登陆
-          </div>
-          <div className={[header.navItem, header.floatRight].join(" ")}>
-            <span className="iconfont iconAa" />
+            <div
+              className={[
+                header.searchInfo,
+                focused || mouseIn ? header.isShowList : header.isHideList
+              ].join(" ")}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              <div className={[header.searchInfoTitle].join(" ")}>
+                热门搜索
+                <span
+                  className={header.searchInfoChange}
+                  onClick={() => {
+                    handleChangePage(page, totalPage);
+                  }}
+                >
+                  <span className="iconfont iconshuaxin" />
+                  换一换
+                </span>
+              </div>
+              <div className={[header.searchInfoList].join(" ")}>
+                {pageList}
+              </div>
+            </div>
+            <div className={[header.navItem, header.floatRight].join(" ")}>
+              登陆
+            </div>
+            <div className={[header.navItem, header.floatRight].join(" ")}>
+              <span className="iconfont iconAa" />
+            </div>
           </div>
         </div>
         <div className={header.addition}>
@@ -78,16 +132,35 @@ class Header extends Component {
 const mapStateToProps = state => {
   return {
     // focused: state.get("header").get("focused")
-    focused: state.getIn(["header", "focused"])
+    focused: state.getIn(["header", "focused"]),
+    list: state.getIn(["header", "list"]),
+    page: state.getIn(["header", "page"]),
+    totalPage: state.getIn(["header", "totalPage"]),
+    mouseIn: state.getIn(["header", "mouseIn"])
   };
 };
 const mapDispatchToPorps = dispatch => {
   return {
-    handleFocuse() {
+    handleFocuse(list) {
+      list.size === 0 && dispatch(actionCreator.getList());
       dispatch(actionCreator.searchFocus());
     },
     handlBlur() {
       dispatch(actionCreator.searchBlur());
+    },
+    handleMouseEnter() {
+      dispatch(actionCreator.mouseEnter());
+    },
+    handleMouseLeave() {
+      dispatch(actionCreator.mouseLeave());
+    },
+    handleChangePage(page, totalPage) {
+      console.log(page, totalPage);
+      if (page < totalPage) {
+        dispatch(actionCreator.changePage(page + 1));
+      } else {
+        dispatch(actionCreator.changePage(1));
+      }
     }
   };
 };
